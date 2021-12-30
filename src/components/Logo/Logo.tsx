@@ -75,4 +75,4 @@ const Logo = ({ color = 'white' }: LogoProps) => (
   </Wrapper>
 )
 
-export default Logo
+export { Logo }
