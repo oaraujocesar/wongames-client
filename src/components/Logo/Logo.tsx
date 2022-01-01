@@ -6,7 +6,7 @@ export type LogoProps = {
   hideOnMobile?: boolean
 }
 
-const Logo = ({
+export const Logo = ({
   color = 'white',
   size = 'normal',
   hideOnMobile = false
@@ -87,5 +87,3 @@ const Logo = ({
     </svg>
   </Wrapper>
 )
-
-export { Logo }
