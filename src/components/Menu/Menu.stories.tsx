@@ -3,10 +3,11 @@ import Menu from './Menu'
 
 export default {
   title: 'Menu',
-  component: Menu
+  component: Menu,
+  args: {}
 } as ComponentMeta<typeof Menu>
 
-export const Default: ComponentStory<typeof Menu> = () => <Menu />
+export const Default: ComponentStory<typeof Menu> = (args) => <Menu {...args} />
 
 Default.parameters = {
   layout: 'fullscreen',

@@ -32,4 +32,24 @@ describe('<Menu />', () => {
     expect(fullMenuElement.getAttribute('aria-hidden')).toBe('true')
     expect(fullMenuElement).toHaveStyle({ opacity: 0 })
   })
+
+  it('should show wishlist and account when logged in', () => {
+    renderWithTheme(<Menu username="cesar" />)
+
+    expect(screen.getByText(/minha conta/i)).toBeInTheDocument()
+    expect(screen.getByText(/lista de desejos/i)).toBeInTheDocument()
+
+    expect(screen.queryByText(/crie sua conta/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/entrar/i)).not.toBeInTheDocument()
+  })
+
+  it('should show register box when logged out', () => {
+    renderWithTheme(<Menu />)
+
+    expect(screen.queryByText(/minha conta/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/lista de desejos/i)).not.toBeInTheDocument()
+
+    expect(screen.getByText(/entrar/i)).toBeInTheDocument()
+    expect(screen.getByText(/crie sua conta/i)).toBeInTheDocument()
+  })
 })

@@ -19,7 +19,11 @@ import {
 import { Logo } from 'components/Logo/Logo'
 import Button from 'components/Button/Button'
 
-const Menu = () => {
+export type MenuProps = {
+  username?: string
+}
+
+const Menu = ({ username }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -46,17 +50,25 @@ const Menu = () => {
         <MenuNav>
           <MenuLink href="#">Início</MenuLink>
           <MenuLink href="#">Explorar</MenuLink>
+          {!!username && (
+            <>
+              <MenuLink href="#">Minha conta</MenuLink>
+              <MenuLink href="#">Lista de desejos</MenuLink>
+            </>
+          )}
         </MenuNav>
 
-        <RegisterBox>
-          <Button fullWidth size="large">
-            Entrar
-          </Button>
-          <span>ou</span>
-          <CreateAccount href="#" title="Crie sua conta">
-            Crie sua conta
-          </CreateAccount>
-        </RegisterBox>
+        {!username && (
+          <RegisterBox>
+            <Button fullWidth size="large">
+              Entrar
+            </Button>
+            <span>ou</span>
+            <CreateAccount href="#" title="Crie sua conta">
+              Crie sua conta
+            </CreateAccount>
+          </RegisterBox>
+        )}
       </MenuFull>
     </Wrapper>
   )
