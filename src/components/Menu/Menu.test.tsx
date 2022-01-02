@@ -49,7 +49,9 @@ describe('<Menu />', () => {
     expect(screen.queryByText(/minha conta/i)).not.toBeInTheDocument()
     expect(screen.queryByText(/lista de desejos/i)).not.toBeInTheDocument()
 
-    expect(screen.getByText(/entrar/i)).toBeInTheDocument()
+    expect(
+      screen.getAllByText(/entrar/i)[1] as HTMLButtonElement
+    ).toBeInTheDocument()
     expect(screen.getByText(/crie sua conta/i)).toBeInTheDocument()
   })
 })

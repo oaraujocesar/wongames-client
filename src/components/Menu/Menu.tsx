@@ -16,8 +16,10 @@ import {
   RegisterBox,
   CreateAccount
 } from './styles'
+
 import { Logo } from 'components/Logo/Logo'
 import Button from 'components/Button/Button'
+import { MediaMatch } from 'components/MediaMatch/MediaMatch'
 
 export type MenuProps = {
   username?: string
@@ -28,13 +30,22 @@ const Menu = ({ username }: MenuProps) => {
 
   return (
     <Wrapper>
-      <IconWrapper>
-        <MenuIcon aria-label="Abrir menu" onClick={() => setIsOpen(true)} />
-      </IconWrapper>
+      <MediaMatch lessThan="medium">
+        <IconWrapper>
+          <MenuIcon aria-label="Abrir menu" onClick={() => setIsOpen(true)} />
+        </IconWrapper>
+      </MediaMatch>
 
       <LogoWrapper>
         <Logo hideOnMobile />
       </LogoWrapper>
+
+      <MediaMatch greaterThan="medium">
+        <MenuNav>
+          <MenuLink href="#">Início</MenuLink>
+          <MenuLink href="#">Explorar</MenuLink>
+        </MenuNav>
+      </MediaMatch>
 
       <MenuGroup>
         <IconWrapper>
@@ -44,6 +55,12 @@ const Menu = ({ username }: MenuProps) => {
           <ShoppingCartIcon aria-label="Ir para o Carrinho de Compras" />
         </IconWrapper>
       </MenuGroup>
+
+      {!username && (
+        <MediaMatch greaterThan="medium">
+          <Button>Entrar</Button>
+        </MediaMatch>
+      )}
 
       <MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Fechar menu" onClick={() => setIsOpen(false)} />
