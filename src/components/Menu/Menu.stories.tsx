@@ -3,12 +3,17 @@ import Menu from './Menu'
 
 export default {
   title: 'Menu',
-  component: Menu,
-  args: {}
+  component: Menu
 } as ComponentMeta<typeof Menu>
 
-export const Basic: ComponentStory<typeof Menu> = (args) => <Menu {...args} />
+export const Default: ComponentStory<typeof Menu> = () => <Menu />
 
-Basic.args = {}
-
-export const Default: ComponentStory<typeof Menu> = (args) => <Menu {...args} />
+Default.parameters = {
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'dark'
+  },
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}

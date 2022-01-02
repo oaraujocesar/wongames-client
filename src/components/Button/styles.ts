@@ -55,7 +55,7 @@ export const Wrapper = styled.button<WrapperProps>`
     color: ${theme.colors.white};
     font-family: ${theme.font.family};
     border-radius: ${theme.border.radius};
-    background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
+    background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 100%);
 
     ${!!size && wrapperModifiers[size](theme)};
 
