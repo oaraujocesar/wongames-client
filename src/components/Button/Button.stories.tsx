@@ -29,3 +29,14 @@ Icon.args = {
   children: 'Buy now',
   icon: <AddShoppingCart />
 }
+
+export const Link: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} />
+)
+
+Link.args = {
+  size: 'large',
+  children: 'Buy now',
+  as: 'a',
+  href: '/link'
+}
