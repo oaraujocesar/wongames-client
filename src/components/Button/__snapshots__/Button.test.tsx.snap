@@ -2,17 +2,23 @@
 
 exports[`<Button /> should should render the normal button as default 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0.8rem;
   border: none;
   cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   color: #FAFAFA;
   font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
   border-radius: 0.4rem;
@@ -24,6 +30,10 @@ exports[`<Button /> should should render the normal button as default 1`] = `
 
 .c0:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 100%);
+}
+
+.c0 > span {
+  margin: 0 auto;
 }
 
 <button
