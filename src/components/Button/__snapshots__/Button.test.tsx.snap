@@ -22,6 +22,10 @@ exports[`<Button /> should should render the normal button as default 1`] = `
   padding: 0.8rem 3.2rem;
 }
 
+.c0:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 100%);
+}
+
 <button
   class="c0"
 >

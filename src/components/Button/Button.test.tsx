@@ -62,4 +62,17 @@ describe('<Button />', () => {
     expect(screen.getByText(/click me!/i)).toBeInTheDocument()
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
+
+  it('should render Button as a link', () => {
+    renderWithTheme(
+      <Button as="a" href="/link">
+        Click me!
+      </Button>
+    )
+
+    expect(screen.getByRole('link', { name: /click me!/i })).toHaveAttribute(
+      'href',
+      '/link'
+    )
+  })
 })
