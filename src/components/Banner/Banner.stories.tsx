@@ -12,15 +12,24 @@ export default {
     buttonLink: '/games/defy-death'
   },
   parameters: {
-    layout: 'fullscreen',
-    viewport: {
-      defaultViewport: 'mobile1'
-    }
+    layout: 'fullscreen'
   }
 } as ComponentMeta<typeof Banner>
 
 export const Default: ComponentStory<typeof Banner> = (args) => (
-  <Banner {...args} />
+  <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+    <Banner {...args} />
+  </div>
 )
 
-Default.args = {}
+export const WithRibbon: ComponentStory<typeof Banner> = (args) => (
+  <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+    <Banner {...args} />
+  </div>
+)
+
+WithRibbon.args = {
+  ribbon: '20% OFF',
+  ribbonSize: 'medium',
+  ribbonColor: 'primary'
+}
