@@ -12,7 +12,7 @@ const props = {
 
 describe('<Banner />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<Banner {...props} />)
+    const { container } = renderWithTheme(<Banner {...props} />)
 
     expect(screen.getByRole('img', { name: /Defy death/i })).toBeInTheDocument()
 
@@ -23,5 +23,7 @@ describe('<Banner />', () => {
     expect(screen.getByRole('heading', { level: 3 }).innerHTML).toEqual(
       '<p>Play the new <strong>CrashLands</strong> season</p>'
     )
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
