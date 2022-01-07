@@ -15,3 +15,5 @@ export const FavButton = styled.button``
 export const BuyBox = styled.div``
 
 export const Price = styled.button``
+
+export const Content = styled.div``
