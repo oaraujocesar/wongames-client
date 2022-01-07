@@ -30,8 +30,8 @@ const GameCard = ({ title, developer, image, price }: GameCardProps) => (
       <Title>{title}</Title>
       <Developer>{developer}</Developer>
     </Info>
-    <FavButton>
-      <FavoriteBorder aria-label="Adicionar a lista de desejos" />
+    <FavButton aria-label="Adicionar a lista de desejos">
+      <FavoriteBorder />
     </FavButton>
     <BuyBox>
       <Price>{price}</Price>
