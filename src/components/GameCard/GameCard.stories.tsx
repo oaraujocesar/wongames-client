@@ -11,7 +11,8 @@ export default {
     price: 'R$ 235,00'
   },
   argTypes: {
-    onFav: { action: 'clicked' }
+    onFav: { action: 'clicked' },
+    ribbon: { type: 'string' }
   },
   parameters: {
     backgrounds: {
@@ -25,3 +26,15 @@ export const Default: ComponentStory<typeof GameCard> = (args) => (
     <GameCard {...args} />
   </div>
 )
+
+export const WithRibbon: ComponentStory<typeof GameCard> = (args) => (
+  <div style={{ width: '30rem' }}>
+    <GameCard {...args} />
+  </div>
+)
+
+WithRibbon.args = {
+  ribbon: '20% OFF',
+  ribbonSize: 'medium',
+  ribbonColor: 'primary'
+}
