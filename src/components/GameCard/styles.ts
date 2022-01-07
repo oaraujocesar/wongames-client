@@ -77,11 +77,14 @@ export const Developer = styled.h4`
   `}
 `
 
-export const FavButton = styled.div`
+export const FavButton = styled.button`
   ${({ theme }) => css`
     right: 0;
     top: -0.5rem;
     position: absolute;
+
+    border: none;
+    background: transparent;
 
     cursor: pointer;
     color: ${theme.colors.primary};

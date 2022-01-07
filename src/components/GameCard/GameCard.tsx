@@ -1,5 +1,6 @@
 import {
   AddShoppingCart,
+  Favorite,
   FavoriteBorder
 } from '@styled-icons/material-outlined'
 import Button from 'components/Button/Button'
@@ -21,6 +22,8 @@ export type GameCardProps = {
   image: string
   price: string
   promotionalPrice?: string
+  favorite?: boolean
+  onFav?: () => void
 }
 
 const GameCard = ({
@@ -28,7 +31,9 @@ const GameCard = ({
   developer,
   image,
   price,
-  promotionalPrice
+  promotionalPrice,
+  favorite = false,
+  onFav
 }: GameCardProps) => (
   <Wrapper>
     <ImageBox>
@@ -39,8 +44,12 @@ const GameCard = ({
         <Title>{title}</Title>
         <Developer>{developer}</Developer>
       </Info>
-      <FavButton>
-        <FavoriteBorder aria-label="Adicionar a lista de desejos" />
+      <FavButton onClick={onFav}>
+        {favorite ? (
+          <Favorite aria-label="Remover da lista de desejos" />
+        ) : (
+          <FavoriteBorder aria-label="Adicionar a lista de desejos" />
+        )}
       </FavButton>
       <BuyBox>
         {!!promotionalPrice && <Price isPromotional>{price}</Price>}

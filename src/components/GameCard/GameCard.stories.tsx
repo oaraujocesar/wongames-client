@@ -9,6 +9,14 @@ export default {
     developer: 'Rockstar Games',
     image: 'https://source.unsplash.com/user/willianjusten/300x140',
     price: 'R$ 235,00'
+  },
+  argTypes: {
+    onFav: { action: 'clicked' }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as ComponentMeta<typeof GameCard>
 
